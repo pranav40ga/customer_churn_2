@@ -129,8 +129,7 @@
 # # -----------------------------
 # # Dataset Preview
 # # -----------------------------
-# st.subheader("📌 Dataset Overview")
-# st.dataframe(df.head())
+
 
 # # -----------------------------
 # # Pie Chart - Churn Distribution
@@ -237,8 +236,7 @@ if "churn" not in df.columns:
 # --------------------------------------------------
 # Dataset Preview
 # --------------------------------------------------
-st.subheader("📌 Dataset Overview")
-st.dataframe(df.head())
+
 
 # --------------------------------------------------
 # Pie Chart - Churn Distribution
@@ -315,13 +313,4 @@ st.subheader("📌 Summary Statistics")
 churn_rate = df["churn"].mean() * 100
 st.write(f"### 🔍 Overall Churn Rate: **{churn_rate:.2f}%**")
 
-st.write("### 📊 Numerical Feature Summary:")
-st.dataframe(df.describe())
 
-# Only numeric columns
-numeric_df = df.select_dtypes(include=["int64", "float64"])
-
-grouped_mean = numeric_df.groupby(df["churn"]).mean()
-
-st.write("### 📈 Churn Group Summary:")
-st.dataframe(grouped_mean)
